@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Buy</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h2>Enter your email to complete your purchase:</h2>
+    <form method="POST" action="/buy/{{ item_id }}/confirm">
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Complete Purchase</button>
+    </form>
+</div>
+{% endblock %}

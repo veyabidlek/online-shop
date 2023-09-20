@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Online Shop</title>
+{% endblock %}
+
+{% block body %}
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal text-body-emphasis">Our Items</h1>
+      <p class="fs-5 text-body-secondary">Choose any item you want. For orders higher 50$, the delivery is free.</p>
+    </div>
+  </header>
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        {%for el in data %}
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">{{ el.title }}</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">${{el.price}}<small class="text-body-secondary fw-light"></small></h1>
+              <p>{{ el.desc }}</p>
+            <a href="/buy/{{ el.id }}" class="w-100 btn btn-lg btn-outline-primary">Buy</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+
+    </div>
+
+{% endblock %}
+
+
+
+
